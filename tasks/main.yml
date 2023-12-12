@@ -1,0 +1,12 @@
+- name: Update package cache
+      package:
+        name: "httpd"
+        state: latest
+      when: ansible_os_family == "linux"
+
+    - name: Install Java (OpenJDK 8)
+      package:
+        name: 
+          - java-1.8.0-openjdk  
+          - java-1.8.0-openjdk-devel 
+        state: present
